@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Practice</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 480px;
+            text-align: center;
+            background: #dddddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h1>Hey !</h1>
+
+<div id="app">
+    <div v-if="showUser">
+        <h2>{{ name }} - {{ job }} - {{ age }} </h2>
+    </div>
+
+    <button v-on:click="age++">increase age</button>
+    <button v-on:click="age--">decrease age</button>
+
+    <button v-on:click="changeName('Er hhan')">change name</button>
+    <button v-on:click="changeStatus()">
+        <span v-if="showUser">hide info</span>
+        <span v-else>show info</span>
+    </button>
+
+    <div>
+        <div class="box" @mouseover="handleEvent()">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent()">mouseleave</div>
+        <div class="box" @dblclick="handleEvent()">double click</div>
+        <div class="box" @mousemove="handleMouseMove">Mouse X and Y : {{ x }} - {{ y }}</div>
+    </div>
+
+    <div>
+        <ul v-if="showBooks" v-for="book in books">
+            <li>
+                <div>
+                    <img :src="book.img" :alt="book.title">
+                </div>
+                {{ book.title }} - {{ book.author }}
+            </li>
+        </ul>
+        <button @click="toggleBookShow">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
