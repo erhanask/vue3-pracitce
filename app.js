@@ -9,9 +9,9 @@ const app = Vue.createApp({
             x: 0 ,
             y: 0,
             books : [
-                {title : 'name of the wind 1',author : 'patrick rathfuss 1',img: 'assets/1.jpg'},
-                {title : 'name of the wind 2',author : 'patrick rathfuss 2',img: 'assets/2.jpg'},
-                {title : 'name of the wind 3',author : 'patrick rathfuss 3',img: 'assets/3.jpg'}
+                {title : 'name of the wind 1',author : 'patrick rathfuss 1',img: 'assets/1.jpg',isFav: true},
+                {title : 'name of the wind 2',author : 'patrick rathfuss 2',img: 'assets/2.jpg',isFav: false},
+                {title : 'name of the wind 3',author : 'patrick rathfuss 3',img: 'assets/3.jpg',isFav: true}
             ]
         }
     },
@@ -31,7 +31,13 @@ const app = Vue.createApp({
         },
         toggleBookShow(){
             this.showBooks = !this.showBooks
+        },
+        changeFavClass(book){
+            book.isFav = !book.isFav
         }
+    },
+    computed : {
+        filteredBooks(){return this.books.filter((book)=>book.isFav) }
     }
 })
 
