@@ -15,6 +15,10 @@
             margin: 20px;
             display: inline-block;
         }
+        .fav{
+            color: white;
+            background: darkblue;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +47,7 @@
 
     <div>
         <ul v-if="showBooks" v-for="book in books">
-            <li>
+            <li :class="{ fav: book.isFav }" @click="changeFavClass(book)">
                 <div>
                     <img :src="book.img" :alt="book.title">
                 </div>
