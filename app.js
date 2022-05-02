@@ -11,7 +11,9 @@ const app = Vue.createApp({
             books : [
                 {title : 'name of the wind 1',author : 'patrick rathfuss 1',img: 'assets/1.jpg',isFav: true},
                 {title : 'name of the wind 2',author : 'patrick rathfuss 2',img: 'assets/2.jpg',isFav: false},
-                {title : 'name of the wind 3',author : 'patrick rathfuss 3',img: 'assets/3.jpg',isFav: true}
+                {title : 'name of the wind 3',author : 'patrick rathfuss 3',img: 'assets/3.jpg',isFav: true},
+                {title : 'name of the wind 4',author : 'patrick rathfuss 4',img: 'assets/1.jpg',isFav: true},
+                {title : 'name of the wind 5',author : 'patrick rathfuss 5',img: 'assets/2.jpg',isFav: true}
             ]
         }
     },
