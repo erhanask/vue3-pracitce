@@ -1,0 +1,7 @@
+{
+  "jobs":[
+    {"title":"Ux Designer", "id":1,"details":"lorem dolor"},
+    {"title":"Web developer", "id":2,"details":"lorem dolor"},
+    {"title":"Vue Developer", "id":3,"details":"lorem dolor"}
+  ]
+}
